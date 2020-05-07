@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const SearchBar = ({ ariaLabel, label, name, placeholder }) => {
+const SearchBar = ({ ariaLabel, label, name, onSubmit, placeholder }) => {
   const [value, setValue] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(value);
+  };
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor={name}>{label}</label>
         <input
           type='text'

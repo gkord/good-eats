@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
   FETCH_RESTAURANTS_REQUEST,
   FETCH_RESTAURANTS_SUCCESS,
@@ -18,3 +19,23 @@ export const fetchRestaurantsFailure = (error) => ({
   data: [],
   payload: error,
 });
+
+export const fetchRestaurants = (city) => {
+  return (dispatch) => {
+    dispatch(fetchRestaurantsRequest);
+    axios
+      .get('https://opentable.herokuapp.com/api/restaurants', {
+        params: {
+          city,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        dispatch(fetchRestaurantsSuccess(res.data));
+      })
+      .catch((error) => {
+        console.log(error.message);
+        dispatch(fetchRestaurantsFailure(error.message));
+      });
+  };
+};
