@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
-const SearchBar = ({ ariaLabel, label, name, onSubmit, placeholder }) => {
+const SearchInput = ({ ariaLabel, label, name, onSubmit, placeholder }) => {
   const [value, setValue] = useState('');
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(value);
+    setValue('');
+
+    history.push('/results');
   };
 
   return (
@@ -28,7 +33,7 @@ const SearchBar = ({ ariaLabel, label, name, onSubmit, placeholder }) => {
   );
 };
 
-SearchBar.propTypes = {
+SearchInput.propTypes = {
   name: PropTypes.string,
   label: PropTypes.string,
   placeholder: PropTypes.string,
@@ -36,4 +41,4 @@ SearchBar.propTypes = {
   ariaLabel: PropTypes.string,
 };
 
-export default SearchBar;
+export default SearchInput;

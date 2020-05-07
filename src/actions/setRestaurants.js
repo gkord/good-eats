@@ -5,8 +5,9 @@ import {
   SET_CITY,
 } from '../constants';
 
-export const setRestaurants = () => ({
+export const setRestaurants = (payload) => ({
   type: SET_RESTAURANTS,
+  payload,
 });
 
 export const filterRestaurants = () => ({

@@ -4,13 +4,13 @@ import {
   FETCH_RESTAURANTS_FAILURE,
 } from '../constants';
 
-const initialState = {
+const fetchInitialState = {
   loading: false,
   data: [],
   error: '',
 };
 
-const fetchRestaurantsReducer = (state = initialState, action) => {
+const fetchRestaurantsReducer = (state = fetchInitialState, action) => {
   switch (action.type) {
     case FETCH_RESTAURANTS_REQUEST:
       return {
@@ -27,6 +27,7 @@ const fetchRestaurantsReducer = (state = initialState, action) => {
       return {
         loading: false,
         error: action.payload,
+        data: [],
       };
     default:
       return state;

@@ -4,6 +4,7 @@ import {
   FETCH_RESTAURANTS_SUCCESS,
   FETCH_RESTAURANTS_FAILURE,
 } from '../constants';
+import { setRestaurants, setCity } from './setRestaurants';
 
 export const fetchRestaurantsRequest = () => ({
   type: FETCH_RESTAURANTS_REQUEST,
@@ -30,12 +31,17 @@ export const fetchRestaurants = (city) => {
         },
       })
       .then((res) => {
-        console.log(res.data);
-        dispatch(fetchRestaurantsSuccess(res.data));
+        const { restaurants } = res.data;
+        console.log(restaurants);
+        dispatch(fetchRestaurantsSuccess(restaurants));
+        dispatch(setRestaurants(restaurants));
+        dispatch(setCity(city));
+        return restaurants;
       })
       .catch((error) => {
-        console.log(error.message);
-        dispatch(fetchRestaurantsFailure(error.message));
+        const errorMsg = error.message;
+        console.log(errorMsg);
+        dispatch(fetchRestaurantsFailure(error));
       });
   };
 };
