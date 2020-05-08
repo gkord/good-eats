@@ -8,7 +8,6 @@ import Header from '../Header/Header';
 const RestaurantList = () => {
   const restaurants = useSelector((state) => state.setRestaurants.restaurants);
   const city = useSelector((state) => state.setRestaurants.city);
-  const address = useSelector((state) => state.setRestaurants.address);
 
   return (
     <>
@@ -22,7 +21,7 @@ const RestaurantList = () => {
               restaurantName={restaurant.name}
               restaurantImg={restaurant.image_url}
               city={city.charAt(0).toUpperCase() + city.slice(1)}
-              address={address}
+              address={restaurant.address}
             />
           );
         })}
