@@ -6,4 +6,8 @@ const StyledList = styled.ul`
   justify-content: center;
 `;
 
+export const StyledMain = styled.main`
+  min-height: 100vh;
+`;
+
 export default StyledList;
