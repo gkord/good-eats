@@ -7,7 +7,6 @@ import {
 
 const initialState = {
   restaurants: [],
-  filteredRestaurants: [],
   city: '',
   filter: '',
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import RestaurantDetailsCard from '../RestaurantDetailsCard/RestaurantDetailsCard';
 import StyledList from './RestaurantList.styles';
@@ -12,6 +11,7 @@ const RestaurantList = () => {
   return (
     <>
       <Header />
+      <h2>Results for {city}</h2>
       <StyledList>
         {restaurants.map((restaurant) => {
           return (
@@ -20,7 +20,6 @@ const RestaurantList = () => {
               reserveLink={restaurant.reserve_url}
               restaurantName={restaurant.name}
               restaurantImg={restaurant.image_url}
-              city={city.charAt(0).toUpperCase() + city.slice(1)}
               address={restaurant.address}
             />
           );
@@ -29,7 +28,5 @@ const RestaurantList = () => {
     </>
   );
 };
-
-// RestaurantList.propTypes = {};
 
 export default RestaurantList;

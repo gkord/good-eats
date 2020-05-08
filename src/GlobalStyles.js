@@ -11,6 +11,10 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Merriweather', serif;
     font-weight: 700;
   }
+  h2 {
+    text-align: center;
+    text-transform: capitalize;
+  }
   p, h3 {
     margin: 12px 0px;
   }
