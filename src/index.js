@@ -8,12 +8,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
-import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
-
-const GlobalStyle = createGlobalStyle`
-  ${reset}
-`;
+import GlobalStyles from './GlobalStyles';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -28,7 +23,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Route exact path='/' component={App} />
         <Route path='/results' component={RestaurantList} />
-        <GlobalStyle />
+        <GlobalStyles />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

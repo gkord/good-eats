@@ -11,7 +11,7 @@ const App = ({ history }) => {
   const error = useSelector((state) => state.fetchRestaurants.error.message);
 
   return (
-    <div>
+    <div className='wrapper'>
       <SearchInput
         ariaLabel='Enter name of city to find restaurants'
         label='City'

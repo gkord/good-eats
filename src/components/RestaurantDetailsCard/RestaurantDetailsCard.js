@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledCard from './RestaurantDetailsCard.styles';
+import { StyledCard, StyledLink } from './RestaurantDetailsCard.styles';
+import { StyledButton } from '../SearchInput/SearchInput.styles';
 
 const RestaurantDetailsCard = ({
   reserveLink,
@@ -13,7 +14,9 @@ const RestaurantDetailsCard = ({
       <img src={restaurantImg} alt={restaurantName} />
       <p>{restaurantName}</p>
       <p>{city}</p>
-      <a href={reserveLink}>Book on OpenTable</a>
+      <StyledButton as={StyledLink} href={reserveLink}>
+        Book on OpenTable
+      </StyledButton>
     </StyledCard>
   );
 };

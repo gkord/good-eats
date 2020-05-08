@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const StyledCard = styled.li`
-  width: 33%;
+export const StyledCard = styled.li`
+  flex: 0 0 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,9 +11,14 @@ const StyledCard = styled.li`
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
   img {
     width: 100%;
   }
 `;
 
-export default StyledCard;
+export const StyledLink = styled.a`
+  text-decoration: none;
+  color: #fff;
+  /* padding: 10px 0px; */
+`;

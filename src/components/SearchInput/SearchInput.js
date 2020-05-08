@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
+import { StyledForm, StyledInput, StyledButton } from './SearchInput.styles';
 
 const SearchInput = ({ ariaLabel, label, name, onSubmit, placeholder }) => {
   const [value, setValue] = useState('');
@@ -15,21 +16,19 @@ const SearchInput = ({ ariaLabel, label, name, onSubmit, placeholder }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor={name}>{label}</label>
-        <input
-          type='text'
-          id={name}
-          name={name}
-          onChange={(e) => setValue(e.target.value)}
-          placeholder={placeholder}
-          value={value}
-          aria-label={ariaLabel}
-        />
-        <button>Search</button>
-      </form>
-    </div>
+    <StyledForm onSubmit={handleSubmit}>
+      <StyledInput
+        type='text'
+        id={name}
+        name={name}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder={placeholder}
+        value={value}
+        aria-label={ariaLabel}
+        required
+      />
+      <StyledButton>Search</StyledButton>
+    </StyledForm>
   );
 };
 
