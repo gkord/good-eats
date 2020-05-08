@@ -9,15 +9,19 @@ const GlobalStyles = createGlobalStyle`
   h1 {
     font-size: 42px;
     font-family: 'Merriweather', serif;
-
+    font-weight: 700;
   }
-  p {
-    margin: 10px 0px;
+  p, h3 {
+    margin: 12px 0px;
+  }
+  h3 {
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
   }
   .wrapper {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 20px;
   }
 `;
 

@@ -2,16 +2,15 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRestaurants } from '../actions/fetchRestaurants';
 import SearchInput from '../components/SearchInput/SearchInput';
-import { store } from '../index';
 
 const App = ({ history }) => {
-  console.log(store.getState());
-
   const dispatch = useDispatch();
   const error = useSelector((state) => state.fetchRestaurants.error.message);
 
   return (
     <div className='wrapper'>
+      <h1>Good Eats</h1>
+      <h3>Find local restaurants in your city</h3>
       <SearchInput
         ariaLabel='Enter name of city to find restaurants'
         label='City'

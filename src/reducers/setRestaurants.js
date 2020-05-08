@@ -32,7 +32,7 @@ const setRestaurantsReducer = (state = initialState, action) => {
     case SET_FILTERED_RESTAURANTS:
       return {
         ...state,
-        filtered: action.payload,
+        restaurants: action.payload.restaurants,
       };
     default:
       return state;

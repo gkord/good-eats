@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
 import { StyledForm, StyledInput, StyledButton } from './SearchInput.styles';
 
-const SearchInput = ({ ariaLabel, label, name, onSubmit, placeholder }) => {
+const SearchInput = ({ ariaLabel, name, onSubmit, placeholder }) => {
   const [value, setValue] = useState('');
-  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(value);
     setValue('');
-
-    history.push('/results');
   };
 
   return (

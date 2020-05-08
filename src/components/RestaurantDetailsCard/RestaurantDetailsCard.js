@@ -7,13 +7,13 @@ const RestaurantDetailsCard = ({
   reserveLink,
   restaurantImg,
   restaurantName,
-  city,
+  address,
 }) => {
   return (
     <StyledCard>
       <img src={restaurantImg} alt={restaurantName} />
-      <p>{restaurantName}</p>
-      <p>{city}</p>
+      <h3>{restaurantName}</h3>
+      <p>{address}</p>
       <StyledButton as={StyledLink} href={reserveLink}>
         Book on OpenTable
       </StyledButton>
@@ -25,6 +25,7 @@ RestaurantDetailsCard.propTypes = {
   restaurantImg: PropTypes.string,
   restaurantName: PropTypes.string,
   city: PropTypes.string,
+  address: PropTypes.string,
 };
 
 export default RestaurantDetailsCard;

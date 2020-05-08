@@ -20,5 +20,4 @@ export const StyledCard = styled.li`
 export const StyledLink = styled.a`
   text-decoration: none;
   color: #fff;
-  /* padding: 10px 0px; */
 `;

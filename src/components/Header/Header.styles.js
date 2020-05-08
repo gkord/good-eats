@@ -15,4 +15,7 @@ export const StyledHeader = styled.header`
       color: #007bff;
     }
   }
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;

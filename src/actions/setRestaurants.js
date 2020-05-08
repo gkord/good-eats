@@ -1,8 +1,8 @@
 import {
   SET_RESTAURANTS,
-  FILTER_RESTAURANTS,
-  SET_FILTER_VALUE,
   SET_CITY,
+  SET_FILTER_VALUE,
+  SET_FILTERED_RESTAURANTS,
 } from '../constants';
 
 export const setRestaurants = (payload) => ({
@@ -10,8 +10,9 @@ export const setRestaurants = (payload) => ({
   payload,
 });
 
-export const filterRestaurants = () => ({
-  type: FILTER_RESTAURANTS,
+export const setCity = (payload) => ({
+  type: SET_CITY,
+  payload,
 });
 
 export const setFilterValue = (payload) => ({
@@ -19,7 +20,16 @@ export const setFilterValue = (payload) => ({
   payload,
 });
 
-export const setCity = (payload) => ({
-  type: SET_CITY,
-  payload,
+export const filterRestaurants = (restaurants, filter) => ({
+  type: SET_FILTERED_RESTAURANTS,
+  payload: {
+    restaurants: !filter
+      ? restaurants
+      : restaurants.filter(
+          (restaurant) =>
+            restaurant.name.toLowerCase().includes(filter.toLowerCase()) ||
+            restaurant.address.toLowerCase().includes(filter.toLowerCase()) ||
+            restaurant.area.toLowerCase().includes(filter.toLowerCase())
+        ),
+  },
 });

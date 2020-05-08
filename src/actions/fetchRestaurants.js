@@ -21,7 +21,7 @@ export const fetchRestaurantsFailure = (error) => ({
   payload: error,
 });
 
-export const fetchRestaurants = (city) => {
+export const fetchRestaurants = (city, history) => {
   return (dispatch) => {
     dispatch(fetchRestaurantsRequest);
     axios
@@ -32,11 +32,13 @@ export const fetchRestaurants = (city) => {
       })
       .then((res) => {
         const { restaurants } = res.data;
-        console.log(restaurants);
-        dispatch(fetchRestaurantsSuccess(restaurants));
-        dispatch(setRestaurants(restaurants));
-        dispatch(setCity(city));
-        return restaurants;
+        if (restaurants.length > 0) {
+          dispatch(fetchRestaurantsSuccess(restaurants));
+          dispatch(setRestaurants(restaurants));
+          dispatch(setCity(city));
+          return history.push('/results');
+        }
+        return alert('No results');
       })
       .catch((error) => {
         const errorMsg = error.message;
