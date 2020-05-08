@@ -31,6 +31,7 @@ I'm often keeping track of performance as I develop and looking out for ineffici
 It's not my favourite API for a few reasons outside of development (largely due to the information being out of date and formerly working in the hospitality industry, but I digress). Back on topic, the images are empty, but I chose to use the placeholders that were there as they made for a better UI. Also it would be cool if the results included ratings of restaurants, perhaps in conjunction with Google ratings. Currently it seems like it returns restaurants in order of price whihc is not really indicative of any sort of rating. Also the total results are paginated to the first 25 results so when the filtering is applied, it's not filtering through all results from the API call.
 
 5. Please describe yourself using JSON.
+```
 {
 "firstName": "Gabe",
 "lastname": "Kugelmass",
@@ -53,3 +54,4 @@ It's not my favourite API for a few reasons outside of development (largely due 
 "Lutherie"
 ],
 }
+```
