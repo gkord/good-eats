@@ -2,7 +2,7 @@
 
 In total I put around 8 hours into the assignment. I figured it would take some time scaffolding out the Redux components and I also chose to use styled components as opposed to a single CSS stylesheet. I probably could have saved some time by bootstrapping with something like the recently updated Redux Toolkit but I wanted to approximate more closely what I think a production implementation of Redux would look like.
 
-I would have liked to have dove deeper into the API to see if I could receive more results and create some pagination to display more. I would have also liked to spend more time tightening up the styling. Lastly I was unable to implement tests. I am able to do testing in React, but was not able to keep it in scope for this assignment
+I would have liked to have dove deeper into the API to see if I could receive more results and create some pagination to display more. I would have also liked to spend more time tightening up the styling. Lastly I was unable to implement meaningful tests. I am able to do testing in React, and rendered a small test in App showing that I can set everything up, but was not able to keep it in scope for this assignment.
 
 2. What was the most useful feature that was added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.
 
